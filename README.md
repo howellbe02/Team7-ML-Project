@@ -3,6 +3,15 @@ The repository has multiple python and R files to run to obtain the results nece
 
 ### KMeans
 
+### Baseline
+
 ### Skill Estimates
 
 ### Markov Chains
+Once the skill estimates are obtained, run Main.py to produce predictions for fights starting May 06, 2023 and ending November 04, 2023. Main.py uses methods from AccuracyProbs.py to produce the transition probabilities necessary for the Markov chains, and the chains are then run using methods from MarkovModel.py. This will create output excel files inside ./predictions/ for each weight class and another excel file to include all the fights from multiple weightclasses. A fight is represented by a single row in these excel tables, and the attributes for a fight are its weightclass, fighter i probability of winning, and fighter j probability of winning.
+
+### Merge Fight Outcome Data with Predictions
+Once the former step is completed, run PredictionsOutcomesMerge.py to create an excel file in ./predictions/, which will include for each fight (represented by a row in the table) the actual outcome.
+
+### Evaluation
+Now, we can determine the results of the Markov Chains. 
