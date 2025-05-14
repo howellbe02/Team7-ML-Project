@@ -4,10 +4,8 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import pandas as pd
 
-# Load your data
 matches_data = pd.read_excel("data/MMAMatches.xlsx")
 
-# Define columns you care about
 columns = [
     'Fighter i ID', 
     'Fighter j ID',
@@ -32,11 +30,11 @@ fighter_def_averages = fighter_data.groupby('Fighter j ID').mean().reset_index()
 fighter_def_averages = fighter_def_averages.drop(columns=['Fighter i ID'])
 
 fighter_def_averages.columns = [
-    'Fighter ID',         # previously 'Fighter j ID'
-    'Head Shots Absorbed',      # previously 'Head Shots Landed'
-    'Head Shots Attempted Against',         # previously 'Head Shots Attempted'
-    'Body Shots Absorbed',      # previously 'Body Shots Landed'
-    'Body Shots Attempted Against',       # previously 'Body Shots Attempted'
+    'Fighter ID',
+    'Head Shots Absorbed',
+    'Head Shots Attempted Against',
+    'Body Shots Absorbed',
+    'Body Shots Attempted Against',
     'Leg Shots Absorbed',
     'Leg Shots Attempted Against',
     'Takedowns Absorbed',
